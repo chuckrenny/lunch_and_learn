@@ -11,8 +11,9 @@ RSpec.describe 'Recipes' do
 
       expect(recipes).to be_a(Hash)
       expect(recipes[:data]).to be_a(Array)
-
+      
       first_recipe = recipes[:data].first 
+
       expect(first_recipe).to have_key(:id)
       expect(first_recipe).to have_key(:type)
       expect(first_recipe).to have_key(:attributes)
@@ -20,6 +21,8 @@ RSpec.describe 'Recipes' do
       expect(first_recipe[:attributes]).to have_key(:url)
       expect(first_recipe[:attributes]).to have_key(:country)
       expect(first_recipe[:attributes]).to have_key(:image)
+      expect(first_recipe[:attributes]).to_not have_key(:images)
+      expect(first_recipe[:attributes]).to_not have_key(:ingredients)
     end
   end
 end

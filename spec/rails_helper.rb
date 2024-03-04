@@ -79,6 +79,7 @@ VCR.configure do |config|
   config.default_cassette_options = { record: :new_episodes }
   config.filter_sensitive_data('<RECIPE_API_APP_ID>') { Rails.application.credentials.recipe_api[:app_id]} # filter app id credentials
   config.filter_sensitive_data('<RECIPE_API_API_KEY>') { Rails.application.credentials.recipe_api[:app_key]} # filter api key
+  config.filter_sensitive_data('<OPEN_WEATHER_API_KEY>') { Rails.application.credentials.open_weather_api[:key]} # filter api key
   config.configure_rspec_metadata! # to use , :vcr
   # config.default_cassette_options = { re_record_interval: 365.days}
 end

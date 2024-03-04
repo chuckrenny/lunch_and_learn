@@ -12,4 +12,8 @@ class CountryService
   def all_countries
     get_url("/v3.1/all")
   end
+
+  def specific_country(country)
+    get_url("/v3.1/name/#{country}")
+  end
 end

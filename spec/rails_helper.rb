@@ -67,3 +67,18 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
 end
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.default_cassette_options = { record: :new_episodes }
+  config.filter_sensitive_data('<RECIPE_API_APP_ID>') { Rails.application.credentials.recipe_api[:app_id]} # filter app id credentials
+  config.filter_sensitive_data('<RECIPE_API_API_KEY>') { Rails.application.credentials.recipe_api[:app_key]} # filter api key
+  config.configure_rspec_metadata! # to use , :vcr
+  # config.default_cassette_options = { re_record_interval: 365.days}
+end

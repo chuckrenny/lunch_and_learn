@@ -79,6 +79,8 @@ VCR.configure do |config|
   config.default_cassette_options = { record: :new_episodes }
   config.filter_sensitive_data('<RECIPE_API_APP_ID>') { Rails.application.credentials.recipe_api[:app_id]} # filter app id credentials
   config.filter_sensitive_data('<RECIPE_API_API_KEY>') { Rails.application.credentials.recipe_api[:app_key]} # filter api key
+  config.filter_sensitive_data('<YOUTUBE_API_API_KEY>') { Rails.application.credentials.youtube_api[:key]}
+  config.filter_sensitive_data('<UNSPLASH_API_CLIENT_ID_KEY>') { Rails.application.credentials.unsplash_api[:client_id] }
   config.configure_rspec_metadata! # to use , :vcr
   # config.default_cassette_options = { re_record_interval: 365.days}
 end

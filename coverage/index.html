@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2024-03-06T09:40:19-08:00">2024-03-06T09:40:19-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2024-03-06T09:46:06-08:00">2024-03-06T09:46:06-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>54</b> relevant lines,
-    <span class="green"><b>54</b> lines covered</span> and
+    <b>56</b> relevant lines,
+    <span class="green"><b>56</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -71,11 +71,11 @@
       <tbody>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#a9b7e159d9e90b736fd486cf2a5aa8c6e0a68672" class="src_link" title="app/services/image_service.rb">app/services/image_service.rb</a></td>
+            <td class="strong t-file__name"><a href="#f8e7cea8ebc94913a7c69a4dcc2908af35bcfe02" class="src_link" title="app/services/resource_service.rb">app/services/resource_service.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">9</td>
-            <td class="cell--number">9</td>
+            <td class="cell--number">19</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">11</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -186,9 +186,9 @@
 
       <div class="source_files">
       
-        <div class="source_table" id="a9b7e159d9e90b736fd486cf2a5aa8c6e0a68672">
+        <div class="source_table" id="f8e7cea8ebc94913a7c69a4dcc2908af35bcfe02">
   <div class="header">
-    <h3>app/services/image_service.rb</h3>
+    <h3>app/services/resource_service.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -200,8 +200,8 @@
     
 
     <div class="t-line-summary">
-      <b>9</b> relevant lines.
-      <span class="green"><b>9</b> lines covered</span> and
+      <b>11</b> relevant lines.
+      <span class="green"><b>11</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -219,7 +219,7 @@
 
             
 
-            <code class="ruby">class ImageService</code>
+            <code class="ruby">class ResourceService</code>
           </li>
         </div>
       
@@ -241,7 +241,7 @@
 
             
 
-            <code class="ruby">    Faraday.new(url: &quot;https://api.unsplash.com&quot;)</code>
+            <code class="ruby">    Faraday.new(url: &quot;https://www.googleapis.com&quot;)</code>
           </li>
         </div>
       
@@ -263,7 +263,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  </code>
           </li>
         </div>
       
@@ -285,7 +285,7 @@
 
             
 
-            <code class="ruby">    response = conn.get(url) do |req| </code>
+            <code class="ruby">    response = conn.get(url) do |req|</code>
           </li>
         </div>
       
@@ -296,12 +296,34 @@
 
             
 
-            <code class="ruby">      req.params[:client_id] = Rails.application.credentials.unsplash_api[:client_id]</code>
+            <code class="ruby">      req.params[:key] = Rails.application.credentials.youtube_api[:key]</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="9">
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      req.params[:part] = &quot;snippet&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      req.params[:channelId] = &#39;UCluQ5yInbeAkkeCndNnUhpw&#39; # @MrHistory1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
@@ -312,7 +334,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="10">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -323,7 +345,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
+          <li class="covered" data-hits="1" data-linenumber="13">
             <span class="hits">1</span>
             
 
@@ -334,7 +356,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="14">
             
             
 
@@ -345,7 +367,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="15">
             
             
 
@@ -356,29 +378,29 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
+          <li class="covered" data-hits="1" data-linenumber="16">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def country_images(country)</code>
+            <code class="ruby">  def youtube_search(country)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
+          <li class="covered" data-hits="1" data-linenumber="17">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    get_url(&quot;search/photos?query=#{country}&amp;page=1&amp;per_page=10&quot;)</code>
+            <code class="ruby">    get_url(&quot;/youtube/v3/search?q=#{country}&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="16">
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
@@ -389,7 +411,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="never" data-hits="" data-linenumber="19">
             
             
 

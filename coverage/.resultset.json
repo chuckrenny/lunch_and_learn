@@ -194,109 +194,6 @@
           null
         ]
       },
-      "/Users/charlesren/Desktop/turing_work/3modRepeat/projects/lunch_and_learn/app/controllers/api/v1/resources_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/charlesren/Desktop/turing_work/3modRepeat/projects/lunch_and_learn/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/charlesren/Desktop/turing_work/3modRepeat/projects/lunch_and_learn/app/facades/resource_facade.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/charlesren/Desktop/turing_work/3modRepeat/projects/lunch_and_learn/app/services/resource_service.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/charlesren/Desktop/turing_work/3modRepeat/projects/lunch_and_learn/app/facades/image_facade.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
       "/Users/charlesren/Desktop/turing_work/3modRepeat/projects/lunch_and_learn/app/services/image_service.rb": {
         "lines": [
           1,
@@ -317,16 +214,8 @@
           null,
           null
         ]
-      },
-      "/Users/charlesren/Desktop/turing_work/3modRepeat/projects/lunch_and_learn/app/serializers/resource_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
       }
     },
-    "timestamp": 1709746404
+    "timestamp": 1709746819
   }
 }

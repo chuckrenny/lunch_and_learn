@@ -8,23 +8,38 @@ RSpec.describe 'Learning Resources' do
           get '/api/v1/learning_resources?country=laos'
 
           expect(response).to be_successful
-require 'pry';binding.pry
+
           resources = JSON.parse(response.body, symbolize_names: true)
 
           expect(resources).to be_a(Hash)
-          require 'pry';binding.pry
-          expect(recipes[:data]).to be_a(Array)
-          
-          first_recipe = recipes[:data].first 
 
-          expect(first_recipe).to have_key(:id)
-          expect(first_recipe).to have_key(:type)
-          expect(first_recipe).to have_key(:attributes)
-          expect(first_recipe[:attributes]).to have_key(:title)
-          expect(first_recipe[:attributes]).to have_key(:url)
-          expect(first_recipe[:attributes]).to have_key(:country)
-          expect(first_recipe[:attributes]).to have_key(:image)
-          expect(first_recipe[:attributes]).to_not have_key(:images)
+          expect(resources[:data]).to be_a(Hash)
+          expect(resources[:data][:id]).to be(nil)
+
+          expect(resources[:data][:type]).to eq("resource")
+          expect(resources[:data][:attributes]).to be_a(Hash)
+          expect(resources[:data][:attributes]).to have_key(:country)
+          expect(resources[:data][:attributes]).to have_key(:video)
+          expect(resources[:data][:attributes]).to have_key(:images)
+
+          expect(resources[:data][:attributes][:country]).to be_a(String)
+          expect(resources[:data][:attributes][:country]).to eq("laos")
+          expect(resources[:data][:attributes][:video]).to be_a(Hash)
+          expect(resources[:data][:attributes][:video]).to have_key(:title)
+          expect(resources[:data][:attributes][:video]).to have_key(:youtube_video_id)
+
+          expect(resources[:data][:attributes][:video][:title]).to be_a(String)
+          expect(resources[:data][:attributes][:video][:title]).to eq("A Super Quick History of Laos")
+          expect(resources[:data][:attributes][:video][:youtube_video_id]).to be_a(String)
+          expect(resources[:data][:attributes][:video][:youtube_video_id]).to eq("uw8hjVqxMXw")
+
+          expect(resources[:data][:attributes][:images].length).to eq(10)
+          expect(resources[:data][:attributes][:images].first).to have_key(:alt_tag)
+          expect(resources[:data][:attributes][:images].first).to have_key(:url)
+          expect(resources[:data][:attributes][:images].first[:alt_tag]).to be_a(String)
+          expect(resources[:data][:attributes][:images].first[:alt_tag]).to eq("time lapse photography of flying hot air balloon")
+          expect(resources[:data][:attributes][:images].first[:url]).to be_a(String)
+          expect(resources[:data][:attributes][:images].first[:url]).to eq("https://images.unsplash.com/photo-1540611025311-01df3cef54b5?ixid=M3w1MjU5ODB8MHwxfHNlYXJjaHwxfHxsYW9zfGVufDB8fHx8MTcwOTc0MzYxOHww&ixlib=rb-4.0.3")
         end
       end
     end

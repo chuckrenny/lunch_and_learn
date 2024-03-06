@@ -43,5 +43,24 @@ RSpec.describe 'Learning Resources' do
         end
       end
     end
+
+    describe 'sad path' do
+      it 'receives an input that doesn\'t output any images or videos' do
+        VCR.use_cassette('invalid_country_input_result') do
+          get '/api/v1/learning_resources?country=Nameofcountry'
+
+          expect(response).to be_successful
+
+          resources = JSON.parse(response.body, symbolize_names: true)
+
+          expect(resources).to be_a(Hash)
+
+          expect(resources[:data]).to be_a(Hash)
+          expect(resources[:data][:id]).to be(nil)
+
+          expect(resources[:data][:type]).to eq("resource")
+        end
+      end
+    end
   end
 end

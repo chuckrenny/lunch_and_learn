@@ -4,10 +4,10 @@ class ResourceFacade
     json = service.youtube_search(q)
 
     first_video = json[:items].first 
-    result = ResourcePoro.new(first_video)
     
-    # Check if !result.title.empty? is present and not empty
-    if !result.title.empty? && !result.youtube_video_id.empty?
+    # Check if first_video is not nil 
+    if !first_video.nil?
+      result = ResourcePoro.new(first_video)
       {
       "title": result.title,
       "youtube_video_id": result.youtube_video_id

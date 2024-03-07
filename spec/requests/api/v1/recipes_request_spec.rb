@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Recipes' do
+RSpec.describe 'Recipes Request API' do
   describe 'get Recipes for a particular country' do
     describe 'happy path' do
       it 'receives a country from the user and looks up recipes from the Recipe API' do 

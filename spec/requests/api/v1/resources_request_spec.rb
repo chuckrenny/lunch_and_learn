@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe 'Learning Resources' do
+RSpec.describe 'Resources Request API' do
   describe 'get YT learning resources for a particular country' do
     describe 'happy path' do
       it 'receives a country from the user and looks up learning resources from the Youtube API' do 
         VCR.use_cassette('laos_learning_resources') do
-          get '/api/v1/learning_resources?country=laos'
+          get '/api/v1/resources?country=laos'
 
           expect(response).to be_successful
 
@@ -47,7 +47,7 @@ RSpec.describe 'Learning Resources' do
     describe 'sad path' do
       it 'receives an input that doesn\'t output any images or videos' do
         VCR.use_cassette('invalid_country_input_result') do
-          get '/api/v1/learning_resources?country=Nameofcountry'
+          get '/api/v1/resources?country=Nameofcountry'
 
           expect(response).to be_successful
 

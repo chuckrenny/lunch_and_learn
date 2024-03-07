@@ -13,7 +13,7 @@ RSpec.describe "Users" do
 
         headers = {"CONTENT_TYPE" => "application/json"}
         # include header to make sure params are passed as JSON rather than as plain text
-        post "/api/v1/users", headers: headers, params: JSON.generate(user: user_params)
+        post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
 
         created_user = User.last
 
@@ -29,6 +29,8 @@ RSpec.describe "Users" do
         expect(created_user.api_key).to be_a(String)
         expect(created_user.api_key.length).to eq(20) 
 
+        data = JSON.parse(response.body, symbolize_names: true)
+        expect(data[:data][:id]).to eq(created_user.id.to_s)
        end
     end
 
@@ -43,7 +45,7 @@ RSpec.describe "Users" do
 
         headers = {"CONTENT_TYPE" => "application/json"}
         # include header to make sure params are passed as JSON rather than as plain text
-        post "/api/v1/users", headers: headers, params: JSON.generate(user: user1_params)
+        post api_v1_users_path, headers: headers, params: JSON.generate(user: user1_params)
 
         user2_params = ({
           name: "Odell",
@@ -54,7 +56,7 @@ RSpec.describe "Users" do
 
         headers = {"CONTENT_TYPE" => "application/json"}
         # include header to make sure params are passed as JSON rather than as plain text
-        post "/api/v1/users", headers: headers, params: JSON.generate(user: user1_params)
+        post api_v1_users_path, headers: headers, params: JSON.generate(user: user1_params)
 
         expect(response).to_not be_successful
         expect(response.status).to eq(422)
@@ -76,7 +78,7 @@ RSpec.describe "Users" do
 
         headers = {"CONTENT_TYPE" => "application/json"}
         # include header to make sure params are passed as JSON rather than as plain text
-        post "/api/v1/users", headers: headers, params: JSON.generate(user: user_params)
+        post api_v1_users_path, headers: headers, params: JSON.generate(user: user_params)
 
         expect(response).to_not be_successful
         expect(response.status).to eq(422)

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/recipes', to: 'recipes#index'
       get '/learning_resources', to: 'resources#index'
+      
+      resources :users, only: [:create]
     end
   end
 end

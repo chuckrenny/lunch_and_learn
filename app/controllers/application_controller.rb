@@ -23,10 +23,6 @@ private
   end
 
 private
-  def find_user_by_email(email)
-    User.find_by(email: email)
-  end
-
   def find_user_by_api_key(api_key)
     User.find_by(api_key: api_key)
   end

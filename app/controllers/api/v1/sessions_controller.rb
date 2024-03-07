@@ -1,6 +1,6 @@
 class Api::V1::SessionsController < ApplicationController
   def create
-    user = find_user_by_email(email: params[:email])
+    user = User.find_by(email: params[:email])
 
     if user && user.authenticate(params[:password])
       render json: UserSerializer.new(user)

@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get '/recipes', to: 'recipes#index'
-      get '/learning_resources', to: 'resources#index'
-      
+      resources :resources, only: [:index]
+      resources :recipes, only: [:index]
       resources :users, only: [:create]
+      resources :sessions, only: [:create]
     end
   end
 end

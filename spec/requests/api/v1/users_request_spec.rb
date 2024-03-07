@@ -29,6 +29,8 @@ RSpec.describe "Users" do
         expect(created_user.api_key).to be_a(String)
         expect(created_user.api_key.length).to eq(20) 
 
+        data = JSON.parse(response.body, symbolize_names: true)
+        expect(data[:data][:id]).to eq(created_user.id.to_s)
        end
     end
 
